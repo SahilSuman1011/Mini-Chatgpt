@@ -43,6 +43,18 @@ async function main(){
         tool_choice: 'auto',
     });
 
+
+    const toolCalls = completions.choices[0].message.tool_calls
+
+    if(!toolCalls){
+        console.log(`Assistant: ${completions.choices[0].message.content}`)
+        return;
+    }
+
+    for(const tool of toolCalls){
+        console.log('tool: ', tool);
+    }
+
     console.log(JSON.stringify(completion.choices[0].message, null, 2));
 }
 
