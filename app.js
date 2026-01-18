@@ -13,7 +13,7 @@ async function main(){
             },
             {
                 role: 'user',
-                content: 'what is current delhi weather',
+                content: 'what is current india pm',
             }
         ]
     });
